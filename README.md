@@ -1,5 +1,5 @@
 # inventory-list
-Link menuju aplikasi Adaptable : [Link Adaptable](https://inventory-list.adaptable.app/main/)
+Link menuju aplikasi Adaptable : [Link Adaptable](https://inventory-list.adaptable.app)
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
     membuat file dengan nama yang diinginkan, kemudian menginstall requirement yang dibutuhkan menambahkan repositori lokal ke git saya bersama dengan .gitignore nya 
     

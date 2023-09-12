@@ -13,6 +13,10 @@
 
     memasukkan routing pada urls.py pada direktori proyek 
 
-    setelah saya melakukan semua, maka saya melakukan git add, commit dan push dan melakukan deploy kepada adaptable 
+    setelah saya melakukan semua, maka saya melakukan git add, commit dan push dan melakukan deploy kepada adaptable
+2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas 
+   html.
+   ![alt text](Users/macbookprom2/Desktop/bagan.png)
+   
 
     

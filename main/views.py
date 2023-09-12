@@ -1,10 +1,10 @@
 from django.shortcuts import render
 def show_main(request):
     context = {
-        'name': 'Draga',
-        'class': 'Dragon',
+        'name': 'Health Potion',
+        'class': 'Potionn',
         'amount' : '1000',
-        'description' : 'entitas tak dikenal ',
+        'description' : 'Gives you some health ',
     }
 
     return render(request, "main.html", context)

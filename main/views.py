@@ -12,9 +12,12 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 import datetime
+import pytz
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
+utc_now = datetime.datetime.now(pytz.utc)
+gmt7 = utc_now.astimezone(pytz.timezone('Etc/GMT-7'))
 @login_required(login_url='/login')
 def show_main(request):
     products = Product.objects.filter(user=request.user)
@@ -60,7 +63,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             response = HttpResponseRedirect(reverse("main:show_main")) 
-            response.set_cookie('last_login', str(datetime.datetime.now()))
+            response.set_cookie('last_login', str(gmt7))
             return response
         else:
             messages.info(request, 'Sorry, incorrect username or password. Please try again.')
@@ -102,12 +105,31 @@ def update_amount(request, item_name, action):
         if action == 'increase':
             item.amount += 1
         elif action == 'decrease':
-            if item.amount > 0:
+            if item.amount == 1:  # Jika item.amount sama dengan 1
+                item.delete()  # Menghapus item dari database
+                return redirect('main:show_main')  # Mengarahkan ulang ke halaman yang menampilkan tabel
+            else:
                 item.amount -= 1
+            
 
     item.save()
 
     return redirect('main:show_main')
+
+def edit_product(request, id):
+    # Get product berdasarkan ID
+    product = Product.objects.get(pk = id)
+
+    # Set product sebagai instance dari form
+    form = ProductForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
 
 
 def delete_item(request, item_name):
@@ -120,3 +142,4 @@ def delete_item(request, item_name):
     item.delete()
 
     return redirect('main:show_main')
+

@@ -1,4 +1,53 @@
 # inventory-list
+#### Tugas 5 #### 
+
+### 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+
+-> Element selector 
+Berguna untuk menambahkan properti css kepada seluruh elemen dengan tag HTML yang sama. Waktu yang digunakan pada kasus sebuah tag membutuhkan design yang sama pada 1 halaman.
+-> ID Selector
+Berguna ketika ingin memberikan properti css secara spesifik kesalah satu elemen karena ID bersifat unik. Tepat digunakan untuk memberi desain secara spesifik kesalah satu elemen.
+-> Class Selector
+Berguna untuk menambahkan properti css kepada seluruh elemen dengan class yang sama. Tepat digunakan untuk memberikan desain ke suatu kelompok elemen yang ingin memiliki desain sama.
+
+### 2. Jelaskan HTML5 Tag yang kamu ketahui.
+
+-> Berikut adalah beberapa HTML5 Tag yang saya ketahui dan pernah gunakan selama pengerjaan tugas PBP : 
+
+    - <Form> = digunakan untuk membuat formulir yang membutuhkan pengiriman data ke server.
+    
+    - <input> = digunakan untuk meminta input dari user
+    
+    - <table>, <tr>, <td>, <th> = digunakan untuk membuat table , tr(baris), td(kolom), th(header)
+    
+    - <div> = digunakan untuk mengelompokkan beberapa elemen/tag lainnnya
+    
+    - <a> = digunakan untuk membuat hyperlink
+    
+    - <button>= digunakan untuk membuat button yang dapat ditekan user
+
+    - <header> = digunakan untuk mendefinisikan bagian head dari suatu halaman web (judul, logo, dll)
+    
+Selain tag-tag diatas, masih sangat banyak tag-tag HTML5 lainnya,
+
+### 3. Jelaskan perbedaan antara margin dan padding.
+
+-> Margin merupakan jarak yang dibuat pada luar elemen , Sedangkan Padding merupakan jarak yang dibuat didalam elemen, Margin berfungsi untuk menjaga jarak antar elemen sedangkan Padding berfungsi untuk mengatur jarak antara element parent dan childnya.
+
+### 4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+-> Tailwind memiliki pendekatan utilit-first yang berarti memberikan utilitas yang dapat diterapkan kepada elemen HTML, sedangkan Bootstrap menggunakan pendekatan "siap pakai". 
+-> Karena pendekatan diatas , Tailwind memiliki ukuran file yang lebih kecil dibandingkan dengan bootstrap yang memiliki ukuran file yang lebih besar.
+-> Tailwind memiliki fleksibilitas yang lebih besar dalam hal memodifikasi kelas-kelasnya, sedangkan bootstrap memiliki fleksibilitas yang lebih rendah karena menyediakan komponen siap pakai.
+
+Dari perbedaan-perbedaan diatas kita dapat menyimpulkan bahwa Bootstrap cocok digunakan ketika membutuhkan pengembangan dalam jangka waktu yang cepat karena memiliki komponen siap pakai, sedangkan untuk Tailwind cocok digunakan dalam pengembangan yang membutuhkan banyak modifikasi desain, Selain itu dalam konteks kesulitan, bootstrap cocok digunakan untuk pemula , sedangkan untuk tailwind membutuhkan pehamaman yang lebih besar tentang bagaimana menggabungkan kelas-kelas yang tersedia untuk mencapai hal yang dinginkan.
+
+### 5.  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+Karena saya menggunakan framework bootstrap CSS, tidak terlalu banyak hal yang perlu saya lakukan untuk mengimplementasikan checklist diatas, berikut adalah hal yang saya lakukan:
+-> Membuat Card = Menggunakan Card Deck dari Bootstrap untuk mengatur layout card card yang dibuat
+-> Menambahkan beberapa properti css pada form page (login,register,create_product) seperti border, pading, size, color
+-> Menambahkan lastchild untuk mentargetkan baris terakhir untuk menyelesaikan bonus 
 #### Tugas 4 ####
 
 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?

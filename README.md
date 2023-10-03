@@ -45,6 +45,7 @@ Dari perbedaan-perbedaan diatas kita dapat menyimpulkan bahwa Bootstrap cocok di
 ### 5.  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 Karena saya menggunakan framework bootstrap CSS, tidak terlalu banyak hal yang perlu saya lakukan untuk mengimplementasikan checklist diatas, berikut adalah hal yang saya lakukan:
+
 --> Membuat Card = Menggunakan Card Deck dari Bootstrap untuk mengatur layout card card yang dibuat
 
 --> Menambahkan beberapa properti css pada form page (login,register,create_product) seperti border, pading, size, color

@@ -16,6 +16,7 @@ import os # Tambahkan kode berikut
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+env = environ.Env() # Tambahkan kode berikut
 # Automatically determine environment by detecting if DATABASE_URL variable.
 # DATABASE_URL is provided by Heroku if a database add-on is added (e.g. Heroku Postgres).
 PRODUCTION = env.bool('PRODUCTION', False)

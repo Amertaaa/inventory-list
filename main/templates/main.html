@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<<<<<<< HEAD
 
 <head>
     <style>
@@ -26,6 +27,21 @@
         button:hover {
             background-color: #0056b3;
         }
+=======
+<h1> Inventory List </h1>
+<h5>Name: </h5>
+<p>{{name}}</p>
+<h5>Class: </h5>
+<p>{{class}}</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Date Added</th>
+    </tr>
+>>>>>>> 3e7afee (tugas4)
 
         table {
             width: 100%;
@@ -55,6 +71,7 @@
             background-color: #FFD700;
         }
 
+<<<<<<< HEAD
         .card {
             border: 1px solid #ddd;
             padding: 20px;
@@ -263,3 +280,40 @@
 </script>
 
 {% endblock content %}
+=======
+    {% for product in products %}
+        <tr>
+            <td>{{product.name}}</td>
+            <td> {{product.amount}}
+            <td>{{product.price}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.date_added}}</td>
+            <td>
+                <a href="{% url 'main:update_amount' product.name 'decrease' %}"><button >-</button></a>
+           
+                <a href="{% url 'main:update_amount' product.name 'increase' %}"><button >+</button></a>
+            </td>
+            <td><a href="{% url 'main:delete_item' product.name %}"><button>Delete</button></td><a/>
+        
+
+
+        </tr>
+    {% endfor %}
+</table>
+
+<br />
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+
+<a href="{% url 'main:create_product' %}">
+    <button>
+        Add New Item
+    </button>
+</a>
+
+<a href="{% url 'main:logout' %}">
+    <button>
+        Logout
+    </button>
+</a>
+{% endblock content %}
+>>>>>>> 3e7afee (tugas4)

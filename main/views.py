@@ -12,7 +12,6 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 import datetime
-<<<<<<< HEAD
 import pytz
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -22,11 +21,6 @@ from django.http import JsonResponse
 
 utc_now = datetime.datetime.now(pytz.utc)
 gmt7 = utc_now.astimezone(pytz.timezone('Etc/GMT-7'))
-=======
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-
->>>>>>> 3e7afee (tugas4)
 @login_required(login_url='/login')
 def show_main(request):
     products = Product.objects.filter(user=request.user)
@@ -35,11 +29,7 @@ def show_main(request):
         'name':  request.user.username, # Nama kamu
         'class': 'PBP A', # Kelas PBP kamu
         'products': products,
-<<<<<<< HEAD
         'last_login': request.COOKIES.get('last_login','Not Available'),
-=======
-        'last_login': request.COOKIES['last_login'],
->>>>>>> 3e7afee (tugas4)
     }
 
     return render(request, "main.html", context)
@@ -76,11 +66,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             response = HttpResponseRedirect(reverse("main:show_main")) 
-<<<<<<< HEAD
             response.set_cookie('last_login', str(gmt7))
-=======
-            response.set_cookie('last_login', str(datetime.datetime.now()))
->>>>>>> 3e7afee (tugas4)
             return response
         else:
             messages.info(request, 'Sorry, incorrect username or password. Please try again.')
@@ -122,23 +108,17 @@ def update_amount(request, item_name, action):
         if action == 'increase':
             item.amount += 1
         elif action == 'decrease':
-<<<<<<< HEAD
             if item.amount == 1:  # Jika item.amount sama dengan 1
                 item.delete()  # Menghapus item dari database
                 return redirect('main:show_main')  # Mengarahkan ulang ke halaman yang menampilkan tabel
             else:
                 item.amount -= 1
             
-=======
-            if item.amount > 0:
-                item.amount -= 1
->>>>>>> 3e7afee (tugas4)
 
     item.save()
 
     return redirect('main:show_main')
 
-<<<<<<< HEAD
 def edit_product(request, id):
     # Get product berdasarkan ID
     product = Product.objects.get(pk = id)
@@ -154,8 +134,6 @@ def edit_product(request, id):
     context = {'form': form}
     return render(request, "edit_product.html", context)
 
-=======
->>>>>>> 3e7afee (tugas4)
 
 def delete_item(request, item_name):
     try:
@@ -166,7 +144,6 @@ def delete_item(request, item_name):
 
     item.delete()
 
-<<<<<<< HEAD
     return redirect('main:show_main')
 
 def get_product_json(request):
@@ -198,9 +175,3 @@ def delete_product_ajax(request):
         product_id = request.POST.get('product_id')
         product = Product.objects.get(pk=product_id)
         product.delete()
-<<<<<<< HEAD
-=======
-=======
-    return redirect('main:show_main')
->>>>>>> 3e7afee (tugas4)
->>>>>>> 8765608 (tugas6(1))

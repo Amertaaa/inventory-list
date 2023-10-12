@@ -12,15 +12,15 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 import datetime
-import pytz
+#import pytz
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
 from django.http import JsonResponse
 
-utc_now = datetime.datetime.now(pytz.utc)
-gmt7 = utc_now.astimezone(pytz.timezone('Etc/GMT-7'))
+#utc_now = datetime.datetime.now(pytz.utc)
+#gmt7 = utc_now.astimezone(pytz.timezone('Etc/GMT-7'))
 @login_required(login_url='/login')
 def show_main(request):
     products = Product.objects.filter(user=request.user)
@@ -66,7 +66,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             response = HttpResponseRedirect(reverse("main:show_main")) 
-            response.set_cookie('last_login', str(gmt7))
+            response.set_cookie('last_login', str(datetime.datetime.now()))
             return response
         else:
             messages.info(request, 'Sorry, incorrect username or password. Please try again.')

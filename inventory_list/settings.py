@@ -16,7 +16,6 @@ import os # Tambahkan kode berikut
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-env = environ.Env()
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,7 +23,6 @@ env = environ.Env()
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-zc=n#&ic1+2mx5836pu2e25dqx^(wrm5vrxd6dvfiurmo%@hj&'
-PRODUCTION = env.bool('PRODUCTION', False)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

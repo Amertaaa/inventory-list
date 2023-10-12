@@ -15,6 +15,9 @@ import datetime
 import pytz
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
+
+from django.http import JsonResponse
 
 utc_now = datetime.datetime.now(pytz.utc)
 gmt7 = utc_now.astimezone(pytz.timezone('Etc/GMT-7'))
@@ -26,7 +29,7 @@ def show_main(request):
         'name':  request.user.username, # Nama kamu
         'class': 'PBP A', # Kelas PBP kamu
         'products': products,
-        'last_login': request.COOKIES['last_login'],
+        'last_login': request.COOKIES.get('last_login','Not Available'),
     }
 
     return render(request, "main.html", context)
@@ -143,3 +146,32 @@ def delete_item(request, item_name):
 
     return redirect('main:show_main')
 
+def get_product_json(request):
+    product_item = Product.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', product_item))
+
+@csrf_exempt
+def add_product_ajax(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+        date_added = request.POST.get("date_added")
+        amount = request.POST.get("amount") 
+        user = request.user
+
+        new_product = Product(name=name, price=price, description=description, user=user, date_added=date_added, amount=amount)
+        new_product.save()
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()
+
+
+
+@csrf_exempt
+def delete_product_ajax(request):
+    if request.method == 'POST':
+        product_id = request.POST.get('product_id')
+        product = Product.objects.get(pk=product_id)
+        product.delete()

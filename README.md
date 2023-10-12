@@ -1,4 +1,45 @@
 # inventory-list
+#### Tugas 6 #### 
+
+### 1.Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+-> Asynchronous 
+    - Operasi dapat dijalankan secara paralel dan tidak harus menunggu operasi sebelumnya selesai. Ini memungkinkan aplikasi untuk tetap responsif meskipun ada operasi yang memerlukan waktu lama untuk menyelesaikan.
+    - Aplikasi atau sistem tetap responsif karena operasi berat dijalankan di latar belakang.
+    - Cocok untuk aplikasi interaktif, server web, atau skenario lain di mana responsivitas dan efisiensi adalah prioritas.
+
+->Synchronous
+    - Dalam pemrograman sinkron, kode dijalankan secara berurutan. Ini berarti bahwa satu operasi harus selesai sebelum operasi berikutnya dapat dimulai.
+    - Aplikasi atau sistem cenderung menjadi tidak responsif selama operasi berat sedang berjalan.
+    - Cocok untuk skenario di mana urutan eksekusi penting dan tidak ada operasi yang memerlukan waktu lama.
+
+### 2.Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+    - Paradigma event-driven programming adalah pendekatan pemrograman di mana alur eksekusi program ditentukan oleh urutan kejadian (atau "event") yang diterima dari sumber eksternal atau dari komponen-komponen internal. Dalam konteks aplikasi berbasis GUI atau aplikasi web, event tersebut bisa berupa tindakan pengguna seperti klik mouse, ketukan keyboard, atau respons dari server.
+    - Pada addProduct, ketika dia sudah berhasil meng-fetch, maka dia akan refresh product secara keseluruhan
+
+### 3. Jelaskan penerapan asynchronous programming pada AJAX.
+    - Ketika terjadi event tertentu (misalnya, pengguna mengklik tombol), sebuah permintaan AJAX dikirim ke server. Permintaan ini dikirim secara asinkron, yang berarti eksekusi kode JavaScript lainnya pada halaman tidak terhenti atau diblokir selama menunggu respons.
+    - Setelah permintaan dikirim, browser melanjutkan eksekusi kode lainnya. Sementara itu, di belakang layar, browser menunggu respons dari server.
+    - Ketika respons diterima dari server, sebuah fungsi callback dijalankan. Fungsi ini bertanggung jawab untuk memproses data yang diterima dan memperbarui halaman web sesuai kebutuhan.
+
+-> Misalkan Anda memiliki form pencarian di situs web Anda. Ketika pengguna mengetik query dan mengklik tombol "Cari", permintaan AJAX dikirim ke server untuk mengambil hasil pencarian. Sementara menunggu respons, pengguna mungkin melihat indikator loading, tetapi mereka masih dapat berinteraksi dengan bagian lain dari halaman. Ketika respons diterima, hasil pencarian ditampilkan di halaman tanpa perlu memuat ulang seluruh halaman.
+
+### 4.Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+-> Fetch API 
+    - Fetch API adalah fitur native dari JavaScript modern, yang berarti tidak memerlukan library tambahan untuk digunakan.
+    - Tidak ada dukungan otomatis untuk browser lama 
+-> Library JQuery
+    - Salah satu kelebihan utama jQuery adalah dukungannya untuk berbagai browser, termasuk browser lama.
+    - Untuk menggunakan AJAX melalui jQuery, Anda harus memasukkan library jQuery ke dalam proyek Anda, yang menambah ukuran total file yang harus diunduh oleh pengguna.
+
+-> Secara pribadi, dengan pertumbuhan dukungan browser, dan fitur-fitur native lainnya, serta dengan munculnya banyak library dan kerangka kerja modern lainnya, saya cenderung lebih memilih Fetch API untuk proyek-proyek baru.
+
+## 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+    - saya bikin fungsi add dan delete product dan get product json. 
+    - kita masukkan ke dalam url path nya, jangan lupa untuk mengimport 
+    - kita ke main.html mengubah tabel dan membuat modal untuk add product 
+    - membuat script untuk fungsi refresh, add dan delete
+    - melakukan git push ke branch dan kemudian main. 
+
 #### Tugas 5 #### 
 
 ### 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.

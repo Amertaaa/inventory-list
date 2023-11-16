@@ -9,7 +9,10 @@ class Product(models.Model):
     description = models.TextField(max_length=255)
     
 # Create your models here.
-# class Employee(models.Model): 
-#     name = models.CharField(max_length=255)
+
+#  class Employee(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     department = models.CharField(max_length=255)
 #     age  = models.IntegerField()
 #     hobby = models.TextField(max_length=255)
+

@@ -1,5 +1,4 @@
 # inventory-list
-<<<<<<< HEAD
 #### Tugas 6 #### 
 
 ### 1.Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
@@ -93,8 +92,6 @@ Karena saya menggunakan framework bootstrap CSS, tidak terlalu banyak hal yang p
 --> Menambahkan beberapa properti css pada form page (login,register,create_product) seperti border, pading, size, color
 
 --> Menambahkan lastchild untuk mentargetkan baris terakhir untuk menyelesaikan bonus 
-=======
->>>>>>> 3e7afee (tugas4)
 #### Tugas 4 ####
 
 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?

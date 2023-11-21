@@ -13,6 +13,5 @@ class Product(models.Model):
 #  class Employee(models.Model):
 #     user = models.OneToOneField(User, on_delete=models.CASCADE)
 #     department = models.CharField(max_length=255)
-#     age  = models.IntegerField()
-#     hobby = models.TextField(max_length=255)
+
 
